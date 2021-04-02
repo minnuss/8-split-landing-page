@@ -1,0 +1,144 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --color-left-bg: rgba(87, 84, 236, 0.65);
+  --color-right-bg: rgba(43, 43, 43, 0.75);
+  --color-left-btn-hover: rgba(87, 84, 236, 1);
+  --color-right-btn-hover: rgb(83, 83, 83);
+  --hover-width: 80%;
+  --other-width: 20%;
+  --speed: 0.7s;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: #333;
+}
+
+.page__split {
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+  transition: all var(--speed) ease-in-out;
+}
+
+.page__split--title {
+  font-size: 6rem;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -20%);
+  white-space: nowrap;
+}
+
+.page__split .btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -40%);
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: 15rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.page .left {
+  left: 0;
+  background: url(../img/ps5.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page .left .btn:hover {
+  background-color: var(--color-left-btn-hover);
+}
+
+.page .left::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-left-bg);
+}
+
+.page .right {
+  right: 0;
+  background: url(../img/xbox.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page .right .btn:hover {
+  background-color: var(--color-right-btn-hover);
+}
+
+.page .right::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-right-bg);
+}
+
+@media (max-width: 600px) {
+  .page__split--title {
+    top: 30%;
+    font-size: 2.5rem;
+  }
+  .page__split .btn {
+    top: 45%;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 12rem;
+    padding: 1.5rem;
+  }
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+/*# sourceMappingURL=style.css.map */
